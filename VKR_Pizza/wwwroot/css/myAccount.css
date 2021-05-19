@@ -1,0 +1,103 @@
+h3 {
+	margin-top: 10px;
+}
+
+.w-15 {
+	width: 15%!important;
+}
+
+.w-30 {
+	width: 30%!important;
+}
+
+.orange {
+	color: rgb(255, 105, 0);
+}
+
+/* Навигация по личному кабинету */
+.list-group-item.active {
+    background-color: rgb(255, 105, 0);
+    border-color: rgb(255, 105, 0);
+}
+
+.list-group-item {
+	cursor: pointer;
+}
+
+.list-group-item:hover {
+	color: white;
+	background-color: rgb(255, 105, 0);
+}
+/* Навигация по личному кабинету */
+
+/* Блок с информацией */
+.block-my-acc {
+	border: 1px double #d4d4d4;
+}
+/* Блок с информацией */
+
+/* Фильтр по заказам */
+.menu-nav-block {
+	border: 1px double #d4d4d4;
+	margin-bottom: 10px;
+}
+
+.menu-filter {
+	padding: 10px 20px;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.menu-filter:hover {
+	color: rgb(255, 105, 0);
+}
+
+.btn-group .active {
+	border-color: white!important;
+	color: rgb(255, 105, 0);
+	border-width: 1px;
+}
+/* Фильтр по заказам */
+
+/* Таблица заказов */
+.table {
+	margin-bottom: 0;
+}
+
+.table-hover:hover {
+	cursor: pointer;
+}
+
+.table-sm {
+	margin-bottom: 10px;
+}
+
+.bi-css {
+	font-size: 18px;
+	font-weight: 900;
+	margin-right: 10px;
+}
+/* Таблица заказов */
+
+/* Картинка пустой таблицы */
+.empty-bask {
+	align-items: center;
+	text-align: center;
+	font-family: Bradley Hand, cursive;
+	margin-bottom: 10px;
+}
+
+.empty-bask img {
+	width: 60%;
+}
+/* Картинка пустой таблицы */
+
+/* Смена пароля */
+.btn-save-comp {
+	color: white;
+	background-color: rgb(255, 105, 0);
+	font-size: 16px;
+	font-weight: 600;
+	margin: 20px 0;
+}
+/* Смена пароля */

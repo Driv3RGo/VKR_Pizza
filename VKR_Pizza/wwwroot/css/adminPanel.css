@@ -1,0 +1,171 @@
+.w-10 {
+	width: 8%!important;
+}
+
+/* Шапка */
+.bg-dark {
+    background-color: #272727!important;
+}
+/* Шапка */
+
+/* Меню */
+.nav-link {
+	color: #333;
+	font-weight: 600;
+}
+
+.nav-link:hover {
+	color: rgb(255, 105, 0)!important;
+}
+
+.nav-item .bi {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.active {
+	color: rgb(255, 70, 0)!important;
+}
+/* Меню */
+
+/* Диаграммы */
+.diagramma-pie {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 900px;
+}
+
+.diagramma-line {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 1100px;
+}
+
+.diagramma-pie-pay {
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+/* Диаграммы */
+
+/* Выбор даты */
+.btn-calendar {
+	border-color: #6c757d;
+	font-size: .975rem;
+	font-weight: 600;
+}
+
+.btn-calendar:hover {
+	border-color: rgb(255, 70, 0)!important;
+	color: rgb(255, 105, 0)!important;
+}
+
+.MQT {
+	width: 25px;
+	margin: 1px 15px;
+}
+
+.MQTT {
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+.btn-complite {
+	text-align: center;
+	border-color: #6c757d;
+	font-size: .975rem;
+	font-weight: 600;
+	padding: 2px 10px;
+}
+
+.btn-complite:hover {
+	border-color: rgb(255, 70, 0)!important;
+	color: rgb(255, 105, 0)!important;
+}
+/* Вобр даты */
+
+/* Главная страница */
+.empty-bask {
+	align-items: center;
+	text-align: center;
+	font-family: Bradley Hand, cursive;
+	height: 80%;
+}
+
+.empty-bask img {
+	height: 90%;
+}
+/* Главная страница */
+
+/* Страница пользователь */
+.search-filter {
+	display: flex;
+	justify-content: space-between;
+}
+
+.blok-filter {
+	flex-grow: 1;
+}
+
+.search-filter h5 {
+	margin-top: 5px;
+}
+
+.btn-check {
+	border-color: #eef0f2;
+	border-radius: 20px;
+}
+
+.btn-check:hover {
+	color: rgb(255, 105, 0);
+}
+
+.search-filter .active {
+	background-color: rgb(255, 70, 0);
+	color: white!important;
+}
+
+.search-po-fio {
+	float: right;
+}
+
+.form-control-sm {
+	text-align: center;
+}
+
+.setting-user .bi {
+	cursor: pointer;
+	padding: 2px;
+}
+
+.setting-user .bi-gear:hover {
+	color: orange;
+}
+
+.setting-user .bi-x-circle:hover {
+	color: red;
+}
+/* Страница пользователь */
+
+/* Способ оплаты */
+.btn-add-pay {
+	border-color: #eef0f2;
+	padding: 1px 10px;
+}
+
+.btn-add-pay:hover {
+	border-color: rgb(255, 105, 0);
+}
+/* Способ оплаты */
+
+/* Размеры пицц */
+.width-number-100 {
+	width: 100px;
+}
+/* Размеры пицц */
+
+/* Картинка в категориях */
+.image-table {
+	width: 35px;
+	height: 35px;
+}
+/* Картинка в категориях */

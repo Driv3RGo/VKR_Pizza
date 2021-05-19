@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- Свои стили -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/CreatePizzaStyle.css" rel="stylesheet">
+
+    <title>Доставка пиццы</title>
+</head>
+<body>
+    <!-- Шапка -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="image/logo.svg" width="80" height="80" class="d-inline-block align-top" alt="">
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor" aria-controls="navbarColor" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse shapka" id="navbarColor">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Меню</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Конструктор</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Контакты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">О нас</a>
+                </li>
+            </ul>
+            <div class="form-inline" id="login"></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="stepCreate" class="row createStep">
+            <div class="col-sm-4 step w-100">
+                <div class="progress">
+                    <div id="stepCreate1" class="progress-bar w-100"></div>
+                </div>
+                <h6 id="stepCreate1h" class="step-active">Выбор размера</h6>
+            </div>
+            <div class="col-sm-4 step w-100">
+                <div class="progress">
+                    <div id="stepCreate2" class="progress-bar"></div>
+                </div>
+                <h6 id="stepCreate2h">Выбор состава</h6>
+            </div>
+            <div class="col-sm-4 step w-100">
+                <div class="progress">
+                    <div id="stepCreate3" class="progress-bar"></div>
+                </div>
+                <h6 id="stepCreate3h">Готовый результат</h6>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="image-newPizza">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 540">
+                        <circle r="269" cx="50%" cy="50%" fill="none" stroke="#D1D0D1" stroke-width="2" stroke-dasharray="2.8.2.8"></circle>
+                        <circle class="" r="218.91891891891893" cx="50%" cy="50%" fill="none" stroke="#D1D0D1" stroke-width="2" stroke-dasharray="2.8.2.8"></circle>
+                    </svg>
+                    <div class="ing-sostav">
+                        <img id="size_imgPizza" src="image/ing_create/base.png" />
+                        <div id="listIngImg">
+
+                        </div>
+                    </div>
+                </div>
+                <p id="inform-pricesize"></p>
+            </div>
+            <div id="mainPage" class="col-sm-7"></div>
+            <div class="col-sm-12 button-next">
+                <button id="butt-next" type="button" class="btn" onclick="loading.next()">Далее ></button>
+                <button id="butt-cancel" style="display: none;" type="button" class="btn" onclick="loading.cancel()">< Назад</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Уведомление-->
+    <div id="message" style="display: none;" class="notification">
+        <div class="not" role="alert">
+            <div class="not-text">Вес не должен превышать 1300 гр.</div>
+        </div>
+    </div>
+    <!--Уведомление-->
+
+    <!--Подвал сайта-->
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-2">
+            <!-- Section: Social media -->
+            <section class="mb-2">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <div>Доставка пиццы © 2021</div>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <!-- Свой скрипт -->
+    <script src="js/workCookie.js"></script>
+    <script src="js/createPizza.js"></script>
+</body>
+</html>

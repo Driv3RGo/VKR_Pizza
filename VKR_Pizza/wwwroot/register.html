@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Свои стили -->
+    <link href="css/register.css" rel="stylesheet">
+
+    <title>Доставка пиццы</title>
+</head>
+<body>
+    <form class="form-signin">
+        <a href="login.html"><img class="mb-4" src="image/logo.svg" alt="" width="100" height="100"></a>
+        <h1 class="h3 mb-3 font-weight-normal">Регистрация</h1>
+        <div id="messageregister"></div>
+        <div class="form-group">
+            <label for="disabledTextInput">ФИО*</label>
+            <input type="text" id="regFIO" class="form-control is-invalid" placeholder="Иванов Иван Иванович" onkeyup="user.CheckInput()">
+        </div>
+        <div class="form-group">
+            <label for="disabledTextInput">Номер телефона*</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">+7</div>
+                </div>
+                <input type="tel" id="regPhone" class="form-control" placeholder="(999) 999-99-99">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Почта*</label>
+            <input type="email" id="regEmail" class="form-control is-invalid" placeholder="ivanov@yandex.ru" onkeyup="user.CheckInput()">
+        </div>
+        <div class="form-group">
+            <label for="disabledTextInput">Пароль*</label>
+            <input type="password" id="regPassword" class="form-control is-invalid" placeholder="Введите пароль" onkeyup="user.CheckInput()">
+        </div>
+        <div class="form-group">
+            <label for="disabledTextInput">Подтверждение пароля*</label>
+            <input type="password" id="regPasswordConfirm" class="form-control is-invalid" placeholder="Введите пароль еще раз" onkeyup="user.CheckInput()">
+        </div>
+        <button type="button" id="submit" class="btn btn-lg btn-primary btn-block" onclick="user.Register()">Зарегистрироваться</button>
+        <p class="mt-5 mb-3 text-muted">© Доставка пиццы 2021</p>
+    </form>
+
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Маска для телефона -->
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <!-- Свой скрипт -->
+    <script src="js/register.js"></script>
+</body>
+</html>

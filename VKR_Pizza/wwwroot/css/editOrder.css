@@ -1,0 +1,106 @@
+/* Навигация по заказам */
+.menu-order {
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+/* Навигация по заказам */
+
+/* Карточки с меню заказов */
+.information-block {
+	cursor: pointer;
+	display: block;
+	width: 300px;
+	border-radius: 20px;
+	opacity: 0.8;
+}
+
+.information-block-active {
+	opacity: 1 !important;
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.information-block:hover {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
+	opacity: 1;
+}
+
+.inform-block-1 {
+	background-color: #FF652F;
+	border-radius: 10px 10px 0 0; 
+	justify-content: space-between;
+}
+
+.inform-block-1 img {
+	height: 80px;
+	padding: 10px;
+}
+
+.inform-block-count {
+	color: white;
+	text-align: right;
+	padding-right: 10px;
+}
+
+.inform-block-count h3 {
+	margin-top: 5px;
+}
+
+.inform-block-2 {
+	padding: 6px;
+	border-radius: 0 0 10px 10px; 
+	border: 1px solid #FF652F;
+	color: #FF652F;
+	font-weight: 600;
+	justify-content: space-between;
+}
+
+.inform-block-2 i {
+	margin-right: 10px;
+}
+
+.color-new-orderB {
+	background-color: #ff9504d9; 
+}
+
+.color-new-orderT {
+	color: #ff9504d9; 
+	border-color: #ff9504d9;
+}
+
+.color-my-orderB {
+	background-color: #1E90FF; 
+}
+
+.color-my-orderT {
+	color: #1E90FF; 
+	border-color: #1E90FF;
+}
+/* Карточки с меню заказов */
+
+/* Картинка пустой таблицы */
+.empty-bask {
+	align-items: center;
+	text-align: center;
+	font-family: Bradley Hand, cursive;
+	margin-bottom: 10px;
+}
+
+.empty-bask img {
+	width: 40%;
+}
+/* Картинка пустой таблицы */
+
+.inform-statusOrder {
+	font-weight: 600;
+	color: red;
+}
+
+.bi-gear:hover {
+	color: red;
+}

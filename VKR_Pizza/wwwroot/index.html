@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <!-- Свои стили -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <title>Доставка пиццы</title>
+</head>
+<body>
+    <!-- Шапка -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="image/logo.svg" width="80" height="80" class="d-inline-block align-top" alt="">
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor" aria-controls="navbarColor" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse shapka" id="navbarColor">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Меню</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="designer.html">Конструктор</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Контакты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">О нас</a>
+                </li>
+            </ul>
+            <div class="form-inline" id="login"></div>
+        </div>
+    </nav>
+
+    <!-- Корзина -->
+    <div class="container-fluid basket">
+        <div class="col-md-12">
+            <button id="basketButton" type="button" class="btn btn-primary" onclick="basket.openBasket()">
+                <span>
+                    Корзина
+                    <b id="basketitems"></b>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Ассортимент -->
+    <div class="container footer-bottom">
+        <div class="row" id="productsDiv"></div>
+    </div>
+
+    <!--Подвал сайта-->
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-2">
+            <!-- Section: Social media -->
+            <section class="mb-2">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <div>Доставка пиццы © 2021</div>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <!-- Подробная информация о пицце -->
+    <div id="Inform_Pizza" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="inform-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 540" class="diameter-wrapper">
+                                    <circle class="diameter-outside" r="269" cx="50%" cy="50%" fill="none" stroke="#D1D0D1" stroke-width="2" stroke-dasharray="2.8.2.8"></circle>
+                                    <circle class="" r="218.91891891891893" cx="50%" cy="50%" fill="none" stroke="#D1D0D1" stroke-width="2" stroke-dasharray="2.8.2.8"></circle>
+                                </svg>
+                                <img id="size_imgPizza" src="image/product/Деревенская.png" />
+                            </div>
+                        </div>
+                        <div id="getOnePizza" class="col-lg-6 information-pizza"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Свой скрипт -->
+    <script src="js/workCookie.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

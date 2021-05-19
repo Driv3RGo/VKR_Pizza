@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- Свои стили -->
+    <link href="../css/adminPanel.css" rel="stylesheet">
+
+    <title>Панель администратора || Доставка пиццы</title>
+</head>
+<body>
+    <!-- Шапка -->
+    <div class="navbar navbar-dark bg-dark p-0 shadow">
+        <a class="navbar-brand" href="../index.html">
+            <img src="../image/logo.svg" width="45" height="45" class="d-inline-block align-top">
+            <div class="navbar-brand">Доставка пиццы</div>
+        </a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="../index.html">Выйти</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Меню -->
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <h5 class="px-3 mt-4 mb-1 text-muted">
+                        <span>Меню</span>
+                    </h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="adminPanelOne.html">
+                                <i class="bi bi-house-door"></i>
+                                Главная страница
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="adminPanelTwo.html">
+                                <i class="bi bi-people"></i>
+                                Пользователи
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="adminPanelThree.html">
+                                <i class="bi bi-basket"></i>
+                                Заказы
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="adminPanelFour.html">
+                                <i class="bi bi-file-earmark-text"></i>
+                                Ингредиенты
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="adminPanelFive.html">
+                                <i class="bi bi-credit-card"></i>
+                                Способы оплаты
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page">
+                                <i class="bi bi-box"></i>
+                                Категории
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="adminPanelSeven.html">
+                                <i class="bi bi-arrows-fullscreen"></i>
+                                Размеры пицц
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="adminPanelEight.html">
+                                <i class="bi bi-bookmark"></i>
+                                Статусы заказов
+                            </a>
+                        </li>
+                    </ul>
+                    <h6 class="px-3 mt-4 mb-1 text-muted">
+                        <span>Отчёты по сотрудникам</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminPanelNine.html">
+                                <i class="bi bi-file-earmark-text"></i>
+                                Операторы
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+            <!-- Меню -->
+            <!-- Основная информация -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="pt-3 pb-2 border-bottom">
+                    <h1 class="h2">Список категорий</h1>
+                </div>
+                <div class="search-filter">
+                    <div class="blok-filter">
+                        <form class="search-po-fio form-inline my-2 my-lg-0">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#addKategoriModal">Добавить</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr align="center">
+                                <th>Наименование</th>
+                                <th>Картинка</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="information-kategori"></tbody>
+                    </table>
+                </div>
+            </main>
+            <!-- Основная информация -->
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addKategoriModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Добавление новой категории</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Наименование:</label>
+                            <input type="text" class="form-control" id="KategoriName">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Картинка:</label>
+                            <input type="file" class="form-control-file" id="KategoriImg">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary" onclick="Kategori.addKategori()">Добавить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- График -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+    <!-- Свой скрипт -->
+    <script src="../js/adminPanel.js"></script>
+</body>
+</html>
