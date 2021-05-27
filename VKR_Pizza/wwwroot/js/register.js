@@ -27,8 +27,16 @@ var user = {
             }),
             success: function (data) {
                 if (!data.error) {      //Если ошибка отсутсвует
-                    alert(data.message);
-                    $(location).attr('href', "index.html");
+                    swal({
+                        title: "Отлично!",
+                        text: data.message,
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonText: "Ок"
+                    },
+                    function () {
+                        $(location).attr('href', "index.html");
+                    });  
                 }
                 else {
                     let html = "";  //Текст вставки
@@ -64,8 +72,16 @@ var user = {
             }),
             success: function (data) { 
                 if (!data.error) {  //Если ошибка отсутсвует
-                    alert(data.message);
-                    $(location).attr('href', "index.html");
+                    swal({
+                        title: "Отлично!",
+                        text: data.message,
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonText: "Ок"
+                    },
+                    function () {
+                        $(location).attr('href', "index.html");
+                    });                   
                 }
                 else {  //Если ошибка есть
                     let html = "";  //Текст вставки

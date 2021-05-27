@@ -11,7 +11,7 @@ namespace VKR_Pizza.Service
         {
             var emailMessage = new MimeMessage();   //Создания объекта отправляемого сообщения
 
-            emailMessage.From.Add(new MailboxAddress("Доставка пиццы", "DimaASDima@yandex.ru"));    //Отправитель
+            emailMessage.From.Add(new MailboxAddress("Доставка пиццы", "vkr.pizza2021@gmail.com")); //Отправитель
             emailMessage.To.Add(new MailboxAddress("", email));                                     //Получатель
             emailMessage.Subject = subject;                                                         //Тема письма
             emailMessage.Body = new BodyBuilder() { 

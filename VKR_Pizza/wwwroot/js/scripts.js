@@ -26,7 +26,6 @@ var user = {
                     user.data_user.message = data.message;
                     jobCoocies.writeCookies(user.data_user, 0);
                 }
-                else $("#basketButton").prop("disabled", true);
                 let html = "";  //Текст вставки
                 if (data.url != "null") {
                     let arr = data.url.split(';');
@@ -268,7 +267,23 @@ var basket = {
 
     //Открыть корзину
     openBasket: function () {
-        $(location).attr('href', "basket.html");
+        if (!user.data_user) {
+            $(location).attr('href', "basket.html");
+        }
+        else {
+            swal({
+                title: "Необходимо выполнить вход",
+                type: "warning",
+                showCancelButton: true,
+                cancelButtonText: "Отмена",
+                confirmButtonColor: "rgb(255, 105, 0)",
+                confirmButtonText: "Авторизоваться"
+            },
+            function () {
+                $(location).attr('href', "login.html");
+            });
+        }
+        
     },
 };
 

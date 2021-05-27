@@ -10,6 +10,8 @@ var createProduct = {
     price: 0        //Цена
 };
 
+var countKategori = [];
+
 var loading = {
     buttonpage: 1,  //Номер шага
     user: {},       //Данные о пользователе
@@ -32,8 +34,12 @@ var loading = {
             if (createProduct.ing.length > 0) {
                 //Цикл по ингредиентам, вставляем картинки с ингредиентами
                 for (var i in createProduct.ing) {
-                    if(i!=0)
+                    if (i != 0) {
+                        if (!countKategori[createProduct.ing[i].ikat])
+                            countKategori[createProduct.ing[i].ikat] = createProduct.ing[i].icount;
+                        else countKategori[createProduct.ing[i].ikat] += createProduct.ing[i].icount;
                         $("#listIngImg").html($("#listIngImg").html() + "<img id=\"imageIng" + createProduct.ing[i].id + "\" class=\"ing_imgPizza\" src=\"image/ing_create/" + createProduct.ing[i].ipicture + "\" />");
+                    }
                 }
             }
         }
@@ -198,7 +204,7 @@ var loading = {
 var Ingredient = {
     ingList: [],    //Список ингредиентов
     kategoriId: 2,  //Выбранная категория
-    flag: false,  //флаг на удаление
+    flag: false,    //флаг на удаление
 
     //Получение списка категорий
     getKategori: function () {
@@ -216,7 +222,10 @@ var Ingredient = {
                     else {
                         html += "<div id=\"kategori" + kat[i].kategoriId + "\" class=\"blok-kategori\" onclick=\"Ingredient.selectCategori(" + kat[i].kategoriId +")\">";
                     }
-                    html += "<img src=\"image/kategori/" + kat[i].picture + "\">";
+                    html += "<div id=\"countk" + kat[i].kategoriId + "\">";
+                    if (countKategori[kat[i].kategoriId])
+                        html += "<span class=\"kategori-count\">" + countKategori[kat[i].kategoriId] +"</span>";
+                    html += "</div><img src=\"image/kategori/" + kat[i].picture + "\">";
                     html += "<p>" + kat[i].name + "</p></div>";
                 }
                 $('#listKategori').html(html);
@@ -225,6 +234,16 @@ var Ingredient = {
                 alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
             }
         });
+    },
+
+    //Вывод количества ингредиентов у подкатегорий
+    viewCountKategori: function (id) {
+        if (countKategori[id] == 0) {
+            $("#countk" + id).html("");
+        }
+        else {
+            $("#countk" + id).html("<span class=\"kategori-count\">" + countKategori[id] +"</span>");
+        }
     },
 
     //Получение ингредиентов
@@ -295,8 +314,9 @@ var Ingredient = {
             var i = createProduct.ing.findIndex(item => item.id == id);     //Ищем добавляемый элемент
             if (i != -1) {
                 if (createProduct.ing[i].icount < 2) {
-                    if (createProduct.massa < 1300) {
+                    if (createProduct.massa < 1000) {
                         createProduct.ing[i].icount++;  //Увеличиваем количество
+                        countKategori[createProduct.ing[i].ikat] += 1;
                         createProduct.massa += Math.floor(selectIng.massa * createProduct.k);
                         createProduct.price += Math.floor(selectIng.price * createProduct.k);
                         $("#cardSpanIngCount" + id).html("x" + createProduct.ing[i].icount);
@@ -310,10 +330,11 @@ var Ingredient = {
                     createProduct.price -= Math.floor(selectIng.price * createProduct.ing[i].icount * createProduct.k);
                     createProduct.ing.splice(i, 1);    //Удаляем элемент из массива
                     $("#imageIng" + id).remove();      //Удаляем картинку данного ингредиента
+                    countKategori[selectIng.kategori_FK] -= 2;
                 }
             }
             else {
-                if (createProduct.massa < 1300) {
+                if (createProduct.massa < 1000) {
                     $("#cardIng" + id).addClass("cardIng-active");
                     html += "<span id=\"cardSpanIngCount" + id + "\" class=\"Img_count\">x1</span>";
                     html += "<span class=\"Img_remove\" onclick=\"Ingredient.delIngredient(" + id + ")\"><i class=\"bi bi-x-circle\"></i></span>";
@@ -325,6 +346,10 @@ var Ingredient = {
                     informIng.ipicture = selectIng.picture; //картинка
                     informIng.imassa = selectIng.massa;     //масса
                     informIng.iprice = selectIng.price;
+                    if (!countKategori[selectIng.kategori_FK]) {
+                        countKategori[selectIng.kategori_FK] = 1;
+                    } else countKategori[selectIng.kategori_FK] += 1;
+                    
                     createProduct.ing.push(informIng);
                     createProduct.massa += Math.floor(selectIng.massa * createProduct.k);
                     createProduct.price += Math.floor(selectIng.price * createProduct.k);
@@ -333,6 +358,7 @@ var Ingredient = {
                 }
                 else Ingredient.viewInformation();
             }
+            Ingredient.viewCountKategori(selectIng.kategori_FK);
         } else Ingredient.flag = false;
         loading.swapSizePrice();
     },
@@ -346,8 +372,10 @@ var Ingredient = {
         $("#cardSpanIng" + id).html("");
         createProduct.massa -= Math.floor(selectIng.massa * createProduct.ing[i].icount);
         createProduct.price -= Math.floor(selectIng.price * createProduct.ing[i].icount);
+        countKategori[selectIng.kategori_FK] -= createProduct.ing[i].icount;
         createProduct.ing.splice(i, 1);    //Удаляем элемент из массива
         $("#imageIng" + id).remove();      //Удаляем картинку данного ингредиента
+        Ingredient.viewCountKategori(selectIng.kategori_FK);
         loading.swapSizePrice();
     },
 

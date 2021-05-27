@@ -85,24 +85,20 @@ namespace VKR_Pizza.Controllers
         {
             if (userId == null || code == null)
             {
-                return Ok("error");
+                return RedirectPermanent("/confirmEmail/emailError.html");
             }
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
-                return Ok("error");
+                return RedirectPermanent("/confirmEmail/emailError.html");
             }
             var result = await _userManager.ConfirmEmailAsync(user, code);
             if (result.Succeeded)
             {
-                var msg = new
-                {
-                    message = "Почта успешно подтверждена.",
-                };
-                return Ok(msg);
+                return RedirectPermanent("/confirmEmail/emailOk.html");
             }
             else
-                return Ok("error");
+                return RedirectPermanent("/confirmEmail/emailError.html");
         }
 
         [HttpPost]
